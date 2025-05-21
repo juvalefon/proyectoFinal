@@ -2,28 +2,117 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #cc3d3d;
+    background-color: #cc3d3d; /* Color de fondo que ya tenías */
     color: #333;
+    display: flex; /* Añadido para el layout general */
+    flex-direction: column; /* Apila los elementos principales verticalmente */
+    min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el 100% del alto de la ventana */
 }
 
-header {
-    background-color: #d8601a;
+/* --- Estilos de la barra de navegación --- */
+.navbar {
+    background-color: #7a6767;  /* Fondo oscuro */
+    overflow: hidden;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;  /* Centra los elementos horizontalmente */
+}
+
+.navbar li {
+    margin: 15px;  /* Espaciado entre los elementos */
+}
+
+.navbar a {
+    display: block;
     color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    background-color: #575757;  /* Color al pasar el ratón */
+}
+
+/* --- Estilos del encabezado --- */
+header {
+    background-color: #70e4e4;
+    color: rgb(20, 20, 20);
     padding: 1em;
     text-align: center;
 }
 
-main {
-    padding: 2em;
+/* --- Contenedor principal con Flexbox para dividir la pantalla (NUEVO) --- */
+.contenedor {
+    display: flex; /* Habilita Flexbox para los hijos directos (texto y mapa) */
+    flex-direction: row; /* Coloca los elementos en fila (uno al lado del otro) */
+    flex-grow: 1; /* Permite que el contenedor crezca y ocupe el espacio disponible */
+    background-color: #f9f9f9; /* Un color más claro para el contenido principal */
 }
 
+.texto {
+    flex: 1; /* Ocupa una parte igual del espacio disponible */
+    padding: 20px;
+    background-color: #f4f4f4; /* Un color ligeramente diferente si lo deseas */
+    display: flex; /* Para centrar el contenido verticalmente */
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+}
+
+.mapa {
+    flex: 1; /* Ocupa una parte igual del espacio disponible */
+    padding: 20px;
+    display: flex; /* Para organizar el título y el mapa */
+    flex-direction: column;
+}
+
+#map {
+    width: 100%;
+    height: 100%; /* Asegúrate de que el mapa ocupe el 100% del alto disponible en su contenedor */
+    min-height: 400px; /* Un alto mínimo para asegurar que el mapa sea visible */
+    border: 1px solid #ccc; /* Un borde sutil para el mapa */
+}
+
+/* --- Estilos generales de sección y pie de página --- */
 section {
-    margin-bottom: 2em;
+    margin-bottom: 0; /* Elimina el margin-bottom para que no interfiera con flexbox */
+}
+
+h1, h2 {
+    color: #333;
+    margin-top: 0; /* Elimina el margen superior predeterminado para mejor control */
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 10px;
 }
 
 footer {
     background-color: #222;
-    color: white;
+    color: rgb(255, 255, 255); /* Cambiado a blanco para mejor contraste con #222 */
     text-align: center;
-    padding: 1em;
+    padding: 0;
+    margin-top: auto; /* Empuja el footer hacia abajo, ocupando el espacio restante */
+}
+
+/* --- Media query para pantallas pequeñas --- */
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column; /* Apila los elementos en columnas en pantallas pequeñas */
+    }
+
+    .texto, .mapa {
+        padding: 15px; /* Ajusta el padding para pantallas pequeñas */
+    }
+
+    #map {
+        height: 300px; /* Ajusta el alto del mapa para pantallas pequeñas */
+        min-height: 250px; /* Un mínimo también para pantallas pequeñas */
+    }
 }
