@@ -1,70 +1,73 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acerca del Proyecto - Parque Alcázares</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Acerca del Proyecto</title>
 
-    <!-- Enlace a la hoja de estilo de Leaflet.js -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
-    <!-- Enlace a tu hoja de estilo CSS -->
-    <link rel="stylesheet" href="estilos.css">
-
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="estilos.css" />
+    <link rel="stylesheet" href="acercadelproyecto.css" />
 </head>
 <body>
 
-    <!-- Contenedor principal con Flexbox para dividir la pantalla -->
-    <div class="contenedor">
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="acercadelproyecto.html">Acerca del Proyecto</a></li>
+            <li><a href="descripcion.html">Descripción</a></li>
+            <li><a href="autor.html">Autor</a></li>
+        </ul>
+    </nav>
 
-        <!-- Sección de texto sobre el proyecto (lado izquierdo) -->
-        <section id="acerca-del-proyecto" class="texto">
-            <header>
-                <h1>Acerca del Proyecto</h1>
-            </header>
-            
-            <p>
-                Este proyecto tiene como objetivo analizar los problemas relacionados con la proliferación de excremento de perro en el Parque Alcázares, ubicado en Bogotá. 
-                Este problema afecta la higiene, la salud pública y el disfrute de los visitantes, especialmente niños y personas que frecuentan el parque. 
-            </p>
-            
-            <p>
-                A través de este proyecto, buscamos sensibilizar a los dueños de mascotas sobre la importancia de mantener limpio el espacio público y
-                fomentar prácticas responsables para mejorar la calidad de vida de los habitantes de la zona.
-            </p>
-        </section>
-
-        <!-- Sección del mapa (lado derecho) -->
-        <section id="mapa" class="mapa">
-            <header>
-                <h2>Ubicación del Parque Alcázares</h2>
+    <div class="content-wrapper">
+        <main class="page-content-acerca"> <header class="page-title-header-acerca">
+                <h1>Sobre el Proyecto y su Alcance</h1>
             </header>
 
-            <!-- Mapa -->
-            <div id="map" style="height: 100%;"></div>
-            
-            <script>
-                // Inicializa el mapa en el parque Alcázares, Bogotá
-                var map = L.map('map').setView([4.6624656,-74.0690435], 16); // Coordenadas del parque Alcázares
+            <div class="contenedor"> <section class="texto">
+                    <header>
+                        <h2>Detalles del Problema</h2>
+                    </header>
+                    
+                    <p>
+                        Este proyecto tiene como objetivo analizar los problemas relacionados con la proliferación de excremento de perro en el Parque Alcázares, ubicado en Bogotá. 
+                        Este problema afecta la higiene, la salud pública y el disfrute de los visitantes, especialmente niños y personas que frecuentan el parque. 
+                    </p>
+                    
+                    <p>
+                        A través de este proyecto, buscamos sensibilizar a los dueños de mascotas sobre la importancia de mantener limpio el espacio público y
+                        fomentar prácticas responsables para mejorar la calidad de vida de los habitantes de la zona.
+                    </p>
+                </section>
 
-                // Cargar el mapa con OpenStreetMap
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                }).addTo(map);
-
-                // Añadir un marcador en el parque Alcázares
-                L.marker([4.6624656,-74.0690435]).addTo(map)
-                    .bindPopup("<b>Parque Alcázares</b><br>Ubicación del proyecto.")
-                    .openPopup();
-            </script>
-        </section>
-        
+                <section class="mapa">
+                    <header>
+                        <h2>Ubicación General del Parque</h2>
+                    </header>
+                    <div id="map-acerca"></div> </section>
+            </div>
+        </main>
     </div>
-
-    <!-- Pie de página -->
+    
     <footer>
         <p>&copy; 2025 - Juana Fonseca</p>
     </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Script para el mapa de la página "Acerca de" (con marcador)
+        var mapAcerca = L.map('map-acerca').setView([4.6624656,-74.0690435], 16);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(mapAcerca);
+
+        L.marker([4.6624656,-74.0690435]).addTo(mapAcerca)
+            .bindPopup("<b>Parque Alcázares</b><br>Ubicación del proyecto.")
+            .openPopup();
+    </script>
 
 </body>
 </html>

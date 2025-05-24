@@ -1,18 +1,23 @@
+/* --- Estilos generales del cuerpo --- */
 body {
-    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     margin: 0;
-    padding: 0;
-    background-color: #cc3d3d; /* Color de fondo que ya tenías */
-    color: #333;
-    display: flex; /* Añadido para el layout general */
-    flex-direction: column; /* Apila los elementos principales verticalmente */
-    min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el 100% del alto de la ventana */
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f0f0;
+    /* Consider setting a base font-size here if you want more control over 'em' units, e.g., font-size: 16px; */
 }
 
-/* --- Estilos de la barra de navegación --- */
+/* --- Barra de navegación (Común a todas las páginas) --- */
 .navbar {
-    background-color: #7a6767;  /* Fondo oscuro */
+    background-color: #4169E1; /* Royal Blue */
+    color: white; /* Ensure text is visible */
     overflow: hidden;
+    flex-shrink: 0;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    box-sizing: border-box;
 }
 
 .navbar ul {
@@ -20,99 +25,138 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;  /* Centra los elementos horizontalmente */
+    justify-content: center;
 }
 
 .navbar li {
-    margin: 15px;  /* Espaciado entre los elementos */
+    margin: 0;
 }
 
 .navbar a {
     display: block;
-    color: white;
-    padding: 14px 20px;
+    color: white; /* Text color for links */
+    padding: 18px 25px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 18px; /* Fixed size for navbar links */
+    transition: background-color 0.3s ease;
 }
 
 .navbar a:hover {
-    background-color: #575757;  /* Color al pasar el ratón */
+    background-color: #314DAB; /* Darker shade of Royal Blue for hover */
 }
 
-/* --- Estilos del encabezado --- */
-header {
-    background-color: #70e4e4;
-    color: rgb(20, 20, 20);
+/* --- Contenedor de contenido principal (Común) --- */
+.content-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* --- Estilos específicos para la página principal (index.html) --- */
+.main-map-content { /* Contenedor del contenido principal de index.html */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+    box-sizing: border-box;
+}
+
+.page-title-header { /* Encabezado del título en index.html */
+    background-color: #4169E1; /* Royal Blue */
+    color: white;
     padding: 1em;
     text-align: center;
+    border-radius: 8px;
+    margin-bottom: 1.5em;
 }
 
-/* --- Contenedor principal con Flexbox para dividir la pantalla (NUEVO) --- */
-.contenedor {
-    display: flex; /* Habilita Flexbox para los hijos directos (texto y mapa) */
-    flex-direction: row; /* Coloca los elementos en fila (uno al lado del otro) */
-    flex-grow: 1; /* Permite que el contenedor crezca y ocupe el espacio disponible */
-    background-color: #f9f9f9; /* Un color más claro para el contenido principal */
+.page-title-header h1 {
+    margin: 0;
+    font-size: 1.8em;
 }
 
-.texto {
-    flex: 1; /* Ocupa una parte igual del espacio disponible */
-    padding: 20px;
-    background-color: #f4f4f4; /* Un color ligeramente diferente si lo deseas */
-    display: flex; /* Para centrar el contenido verticalmente */
-    flex-direction: column;
-    justify-content: center; /* Centra el contenido verticalmente */
-}
-
-.mapa {
-    flex: 1; /* Ocupa una parte igual del espacio disponible */
-    padding: 20px;
-    display: flex; /* Para organizar el título y el mapa */
-    flex-direction: column;
-}
-
-#map {
-    width: 100%;
-    height: 100%; /* Asegúrate de que el mapa ocupe el 100% del alto disponible en su contenedor */
-    min-height: 400px; /* Un alto mínimo para asegurar que el mapa sea visible */
-    border: 1px solid #ccc; /* Un borde sutil para el mapa */
-}
-
-/* --- Estilos generales de sección y pie de página --- */
-section {
-    margin-bottom: 0; /* Elimina el margin-bottom para que no interfiera con flexbox */
-}
-
-h1, h2 {
-    color: #333;
-    margin-top: 0; /* Elimina el margen superior predeterminado para mejor control */
-}
-
-p {
+/* Estilo para el texto introductorio en index.html */
+.intro-text {
+    font-size: 1.1em; /* Standardized paragraph font size */
     line-height: 1.6;
-    margin-bottom: 10px;
+    color: #333; 
+    text-align: justify; /* Text justification added */
+    margin-bottom: 1.5em;
+    padding: 0.5em 1em;
+    background-color: #ffffff; 
+    border-radius: 6px;      
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
 }
 
+.map-container-full { /* Contenedor del mapa en index.html */
+    flex-grow: 1;
+    display: flex;
+    background-color: #e9e9e9; 
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Estilo base para los divs de mapa (usado por #map en index.html y #map-acerca en acercadelproyecto.html) */
+#map, #map-acerca {
+    width: 100%;
+    height: 100%;
+    min-height: 450px; 
+    border: 1px solid #ccc;
+    border-radius: inherit; 
+    flex-grow: 1; 
+}
+
+/* --- Estilos del pie de página (Común a todas las páginas) --- */
 footer {
-    background-color: #222;
-    color: rgb(255, 255, 255); /* Cambiado a blanco para mejor contraste con #222 */
+    background-color: #4169E1; /* Royal Blue */
+    color: white; 
     text-align: center;
-    padding: 0;
-    margin-top: auto; /* Empuja el footer hacia abajo, ocupando el espacio restante */
+    padding: 1.5em;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    font-size: 0.9em;
 }
 
-/* --- Media query para pantallas pequeñas --- */
+/* --- Media query para pantallas pequeñas (Ajustes generales y para index.html) --- */
 @media (max-width: 768px) {
-    .contenedor {
-        flex-direction: column; /* Apila los elementos en columnas en pantallas pequeñas */
+    .navbar {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar a {
+        padding: 12px 20px;
+        border-bottom: 1px solid #314DAB; 
+    }
+    .navbar li:last-child a {
+        border-bottom: none;
     }
 
-    .texto, .mapa {
-        padding: 15px; /* Ajusta el padding para pantallas pequeñas */
+    /* Ajustes para index.html en móviles */
+    .main-map-content {
+        padding: 1em;
+    }
+    .page-title-header h1 {
+        font-size: 1.5em;
+    }
+     .page-title-header {
+        margin-bottom: 1em;
+    }
+    .intro-text {
+        font-size: 1em; /* Slightly smaller on mobile */
+        margin-bottom: 1em;
     }
 
-    #map {
-        height: 300px; /* Ajusta el alto del mapa para pantallas pequeñas */
-        min-height: 250px; /* Un mínimo también para pantallas pequeñas */
+    /* Ajuste general para mapas en móviles */
+    #map, #map-acerca {
+        min-height: 350px;
+    }
+
+    footer {
+        padding: 1em;
     }
 }

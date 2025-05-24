@@ -1,0 +1,117 @@
+/* Estilos específicos para acercadelproyecto.html */
+
+/* Contenedor principal del contenido de la página "Acerca de" */
+.page-content-acerca {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em; 
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Encabezado del título principal de la página "Acerca de" */
+.page-title-header-acerca {
+    background-color: #4169E1; /* Royal Blue */
+    color: white;
+    padding: 1em;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 1.5em;
+}
+
+.page-title-header-acerca h1 {
+    margin: 0;
+    font-size: 1.8em; 
+}
+
+/* --- Contenedor para layout lado a lado --- */
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1; 
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05); 
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* --- Estilos del encabezado de sección DENTRO de .contenedor (.texto y .mapa) --- */
+.contenedor header {
+    font-size: 1em; /* Base for em units within this header */
+    margin-top: 0;
+    margin-bottom: 1em;
+    background-color: #4169E1; /* Royal Blue para consistencia */
+    color: white; 
+    padding: 0.8em 1em;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.contenedor header h1, .contenedor header h2 { 
+    margin: 0;
+    font-size: 1.3em; 
+}
+
+/* --- Sección de texto y mapa dentro de .contenedor --- */
+.texto {
+    flex: 1.5;
+    padding: 1.5em;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.mapa {
+    flex: 1;
+    padding: 1.5em;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #e0e0e0;
+}
+
+/* --- Estilos de tipografía específicos para .texto dentro de .contenedor --- */
+.contenedor .texto p {
+    font-size: 1.1em; /* Standardized paragraph font size */
+    line-height: 1.6;
+    margin-bottom: 1em;
+    color: #000000;
+    text-align: justify; /* Text justification added */
+}
+
+
+/* --- Media query para pantallas pequeñas: ajustes para .contenedor --- */
+@media (max-width: 768px) {
+    .page-content-acerca {
+        padding: 1em; 
+    }
+    .page-title-header-acerca h1 {
+        font-size: 1.5em; 
+    }
+    .page-title-header-acerca {
+        margin-bottom: 1em;
+    }
+
+    .contenedor {
+        flex-direction: column;
+    }
+
+    .contenedor header h1, .contenedor header h2 {
+        font-size: 1.2em; 
+    }
+    
+    .contenedor .texto p {
+        font-size: 1em; /* Slightly smaller on mobile */
+    }
+
+    .texto, .mapa {
+        padding: 1em;
+        border-left: none; 
+    }
+
+    .mapa {
+        border-top: 1px solid #e0e0e0;
+    }
+}

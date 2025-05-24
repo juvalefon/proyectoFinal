@@ -1,0 +1,174 @@
+/* Estilos específicos para descripcion.html */
+
+/* Contenedor principal del contenido de la página "Descripción" */
+.page-content-descripcion {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em; /* Consistente con otras páginas */
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* --- REGLA DIRECTA Y FUERTE PARA LOS SUBTÍTULOS AZULES --- */
+/* Asegúrate que tus H2 tengan la clase "subtitulo-seccion-descripcion" en el HTML */
+
+.tecnologias-info h2.subtitulo-seccion-descripcion {
+    color: #4169E1 !important;  /* AZUL ROYAL FORZADO */
+    background-color: transparent !important; /* SIN FONDO DE COLOR */
+    font-size: 1.6em !important;
+    font-weight: 600 !important;
+    text-align: left !important;
+    margin: 0 0 0.3em 0 !important; /* Ajusta el primer '0' si necesitas margen superior para el primer título con esta clase */
+    padding-bottom: 0.3em !important;
+    border: none !important; /* Limpiamos cualquier borde que venga de otra regla general de h2 */
+    border-bottom: 2px solid #a9c2f5 !important; /* LÍNEA AZUL CLARA DEBAJO FORZADA */
+}
+
+#titulo-tecnologias-especifico {
+    margin-top: 2em !important; 
+    color: #4169E1;
+}
+   
+/* --- Media query (asegúrate que esta parte esté al final del todo el CSS) --- */
+@media (max-width: 768px) {
+    .tecnologias-info h2.subtitulo-seccion-descripcion {
+        font-size: 1.3em !important; /* Ajuste para móviles */
+    }
+}
+
+/* Encabezado del título principal de la página "Descripción" */
+.page-title-header-descripcion {
+    background-color: #4169E1; /* Royal Blue */
+    color: white;
+    padding: 1em;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 1.5em;
+}
+
+.page-title-header-descripcion h1 {
+    margin: 0;
+    font-size: 1.8em; /* Consistente con otras páginas */
+}
+
+/* --- CLASE COMÚN PARA SUBTÍTULOS DE SECCIÓN (NUEVA/REFINADA) --- */
+/* Aplica esta clase a los <h2> de "Herramientas y Enfoque" y "Tecnologías Utilizadas" en tu HTML */
+.subtitulo-seccion-descripcion { /* Nombre de clase más específico para evitar colisiones */
+    color: #4169E1;            /* Texto en Royal Blue */
+    font-size: 1.6em;
+    font-weight: 600;
+    margin: 0 0 0.3em 0;       /* Margen solo abajo (antes de padding para la línea) */
+                               /* El margen superior se manejará por el contexto o un estilo en línea en HTML */
+    padding-bottom: 0.3em;       /* Espacio para la línea debajo */
+    border-bottom: 2px solid #a9c2f5; /* Línea debajo del título (azul más claro) */
+    text-align: left;
+}
+
+/* Contenedor para la información de tecnologías ("caja de texto") */
+.tecnologias-info {
+    background-color: #ffffff; /* Fondo blanco para la caja de texto */
+    /* color: #4169E1;  <-- Eliminado: Esto hacía todo el texto azul por defecto. Mejor controlar por elemento. */
+    padding: 2em; /* Buen padding interno */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Sombra sutil para destacar la caja */
+    flex-grow: 1; /* Si es el único elemento principal, puede crecer */
+}
+
+/* Contenedor del primer subtítulo ("Herramientas y Enfoque") */
+.tecnologias-info header {
+    background-color: transparent; /* Fondo blanco/transparente */
+    color: inherit;                 /* Hereda color, el h2 con clase definirá el suyo */
+    padding: 0;
+    margin-bottom: 1.5em; /* Espacio después del bloque completo del primer subtítulo y sus párrafos */
+    border-radius: 0;
+    text-align: left;
+    border-bottom: none;
+}
+/* El <h2> dentro de este <header> deberá tener class="subtitulo-seccion-descripcion" */
+/* Ya no necesitamos la regla específica para .tecnologias-info header h2 */
+
+
+/* Las reglas para #titulo-tecnologias y .tecnologias-info .subtitulo-tecnologias se eliminan
+   porque ahora el <h2> de "Tecnologías Utilizadas" también usará class="subtitulo-seccion-descripcion" */
+
+
+.tecnologias-info p {
+    font-size: 1.1em; 
+    line-height: 1.7; 
+    color: #333; /* Texto de párrafo en gris oscuro */
+    text-align: justify; 
+    margin-bottom: 1.2em; 
+}
+
+/* Párrafo directamente después de un subtítulo de sección */
+.subtitulo-seccion-descripcion + p {
+    margin-top: 0.8em; /* Espacio entre la línea del subtítulo y el párrafo que le sigue */
+}
+
+.tecnologias-info p:last-child {
+    margin-bottom: 0; 
+}
+
+.tecnologias-info ul {
+    list-style-type: none; 
+    padding-left: 0; 
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+}
+
+.tecnologias-info li {
+    padding: 1em 0; 
+    border-bottom: 1px solid #f0f0f0; 
+    line-height: 1.6; 
+    color: #333; /* Texto de items de lista en gris oscuro */
+}
+
+.tecnologias-info li:last-child {
+    border-bottom: none; 
+}
+
+.tecnologias-info li strong {
+    background-color: #eef4ff; 
+    color: #4169E1;            
+    padding: 0.3em 0.6em;       
+    border-radius: 4px;         
+    font-size: 1.1em;           
+    font-weight: 600;           
+    display: inline-block;      
+    margin-bottom: 0.5em;       
+    border-left: 3px solid #4169E1; 
+}
+
+
+/* --- Media query para pantallas pequeñas: ajustes para la página "Descripción" --- */
+@media (max-width: 768px) {
+    .page-content-descripcion {
+        padding: 1em; 
+    }
+
+    .page-title-header-descripcion h1 {
+        font-size: 1.5em; 
+    }
+    .page-title-header-descripcion {
+        margin-bottom: 1em;
+    }
+
+    .tecnologias-info {
+        padding: 1.5em; 
+    }
+
+    /* Ajuste para la clase común de subtítulo en móviles */
+    .subtitulo-seccion-descripcion {
+        font-size: 1.3em; 
+        /* El margen superior se controla en el HTML si es necesario para el segundo título */
+    }
+    
+    .tecnologias-info li strong {
+        font-size: 1.05em; 
+    }
+
+    .tecnologias-info p, .tecnologias-info li { /* Asegurar que texto de li también se ajuste */
+        font-size: 1em; 
+    }
+}

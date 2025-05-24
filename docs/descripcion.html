@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Descripción</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="estilos.css" />
+    <link rel="stylesheet" href="descripcion.css" />
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="acercadelproyecto.html">Acerca del Proyecto</a></li>
+            <li><a href="descripcion.html">Descripción</a></li>
+            <li><a href="autor.html">Autor</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-wrapper">
+        <main class="page-content-descripcion"> 
+            <header class="page-title-header-descripcion">
+                <h1>Descripción de Técnicas y Metodología</h1>
+            </header>
+
+            <section class="tecnologias-info">
+                <header>
+                    <h2>Herramientas y Enfoque</h2>
+                </header>
+                <p>
+                    El presente proyecto se ha concebido como una respuesta informada y constructiva ante 
+                    la problemática persistente de la disposición inadecuada de excrementos caninos en el Parque Alcázares, un valioso espacio 
+                    público situado en Bogotá, Colombia. Esta situación genera consecuencias directas sobre la calidad ambiental del parque, 
+                    la salud pública de sus usuarios y el pleno disfrute de sus instalaciones, afectando particularmente a la población 
+                    infantil y a los residentes que lo frecuentan.
+                <p>
+                    El objetivo principal de esta iniciativa es: Realizar un análisis de la situación para comprender sus dimensiones y, tambien, desarrollar estrategias de sensibilización 
+                    dirigidas a los propietarios de mascotas. Se busca promover activamente la tenencia responsable y el cumplimiento 
+                    de las normas cívicas elementales, como la recolección de los desechos caninos, para así mitigar los impactos negativos observados.
+                </p>
+                <h2 class="subtitulo-seccion" style="margin-top: 2em;">Tecnologías Utilizadas</h2>
+                <p>
+                    Para el desarrollo de este proyecto, se están empleando y se planea utilizar un conjunto de tecnologías web modernas y bibliotecas especializadas. La elección de estas herramientas se basa en su robustez, flexibilidad y la amplia comunidad de soporte que las respalda, permitiendo abordar eficazmente la problemática del Parque público Alcázares.
+                </p>
+                <ul>
+                    <li>
+                        <strong>HTML (HyperText Markup Language):</strong> Es el esqueleto de todas las páginas web del proyecto. Se utiliza para estructurar el contenido de manera semántica, asegurando que la información sobre el Parque público Alcázares y la problemática sea accesible y bien organizada.
+                    </li>
+                    <li>
+                        <strong>CSS (Cascading Style Sheets):</strong> Se encarga de toda la presentación visual y el diseño. Mediante `estilos.css` (para estilos generales) y hojas de estilo específicas por página (como `descripcion.css`), se busca ofrecer una experiencia de usuario agradable, intuitiva y coherente a lo largo del sitio.
+                    </li>
+                    <li>
+                        <strong>JavaScript:</strong> Aporta la interactividad y dinamismo a las páginas. Es fundamental para manipular el DOM, gestionar eventos y, crucialmente, para interactuar con bibliotecas de mapeo y visualización de datos relacionados con el parque.
+                    </li>
+                    <li>
+                        <strong>Leaflet.js:</strong> Una biblioteca de JavaScript de código abierto, ligera pero potente, para crear mapas interactivos amigables para móviles. Ha sido la elección para la visualización del mapa base del Parque Alcázares y la representación de polígonos geográficos, como se evidencia en la página principal y la sección "Acerca del Proyecto".
+                    </li>
+                    <li>
+                        <strong>Turf.js:</strong> Se planea integrar Turf.js, una biblioteca avanzada de JavaScript para análisis geoespacial. Con Turf.js, podríamos realizar operaciones como análisis de densidad de puntos (para identificar zonas críticas de acumulación de excrementos), cálculos de áreas afectadas dentro del parque, y otras funciones espaciales directamente en el navegador. Esto será clave para el "componente práctico" del proyecto, permitiendo análisis más profundos y visualizaciones de datos espaciales más ricas y significativas sobre la situación en el Parque Alcázares.
+                    </li>
+                </ul>
+                <p>
+                    La combinación de estas tecnologías nos permite construir una aplicación web que no solo presenta información sobre la problemática en el Parque Alcázares, sino que también busca ofrecer herramientas para la sensibilización, el análisis y la visualización interactiva de datos relevantes para la comunidad.
+                </p>
+                 <p>
+                    La metodología combina una fase descriptiva-diagnóstica para analizar la situación de los excrementos caninos en el Parque público Alcázares, con una fase de desarrollo e implementación tecnológica. Esta última se centra en crear una plataforma web interactiva que sirva como herramienta para la concienciación comunitaria y el análisis de la problemática.
+                </p>
+            </section>
+        </main>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 - Juana Fonseca</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    </body>
+</html>
