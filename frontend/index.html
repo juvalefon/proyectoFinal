@@ -19,24 +19,17 @@
     <div id="map"></div>
     <script src="programa.js"></script>
 
-
-    <form action="">
-    <label for="GET-name">Fecha:</label>
-    <input id="GET-name" type="date" name="fecha" />
-    <input type="submit" value="Save" />
-    </form>
-
-    <form action="">
-    <label for="GET-name">Nombre:</label>
-    <input id="GET-name" type="text" name="name" />
-    <input type="submit" value="Save" />
-    </form> 
-
-    <form action="">
-    <label for="GET-name">Descripción:</label>
-    <input id="GET-name" type="text" name="name" />
-    <input type="submit" value="Save" />
-    </form>
+            <form action="">
+            <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input class="form-control" type="text" name="nombre" id="nombre">
+            <label for="fecha">Fecha:</label>
+            <input class="form-control" type="date" name="fecha" id="fecha">
+            <label for="descripción">Descripción:</label>
+            <input class="form-control" type="text" name="descripción" id="descripción">
+            <button type="button" class="btn btn-primary">Aceptar</button>
+            </div>
+        </form>
 
 </body>
 </html>
