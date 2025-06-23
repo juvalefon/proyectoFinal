@@ -1,1 +1,36 @@
-#map { height: 500px; }
+#map-add-point {
+    height: 400px;
+    border-radius: 10px;
+    width: 100%;
+    z-index: 0;
+    cursor: crosshair; 
+}
+
+.form-label {
+    color: #ffffff;
+    font-weight: 500; 
+}
+
+.form-control, .form-select {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.75rem 1rem;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    border-color: #198754;
+    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.5);
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+#coords-status {
+    font-style: italic;
+    min-height: 1.5em; 
+}

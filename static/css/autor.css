@@ -1,0 +1,51 @@
+/* =================================================================
+   ESTILOS EXCLUSIVOS PARA LA PÁGINA "AUTOR"
+   ================================================================== */
+
+/* Estilo para la foto del autor */
+.author-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #198754;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para el título o rol debajo del nombre */
+.author-title {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1.5rem;
+}
+
+/* Estilo para el párrafo de la biografía */
+.author-bio {
+    text-align: left;
+}
+
+/* Contenedor para los enlaces a redes sociales */
+.author-social-links {
+    margin-top: 1.5rem;
+}
+
+/* Estilo para cada enlace social individual */
+.social-link {
+    color: #dee2e6;
+    font-size: 2rem;
+    margin: 0 0.75rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+    color: #198754;
+    transform: scale(1.2);
+}
+
+/* Estilos para el nuevo mapa en la página de autor */
+#map-autor {
+    height: 350px; /* Altura para el mapa */
+    border-radius: 10px;
+    width: 100%;
+    z-index: 0;
+}

@@ -1,0 +1,11 @@
+/* =================================================================
+   ESTILOS EXCLUSIVOS PARA LA PÁGINA "ACERCA DE"
+   ================================================================== */
+
+/* Estilos específicos para el contenedor del mapa */
+#map-acerca {
+    height: 400px; /* Altura obligatoria para que el mapa sea visible */
+    border-radius: 10px; /* Bordes redondeados para que encaje en la tarjeta */
+    width: 100%;
+    z-index: 0; /* Asegura que el mapa no se superponga a elementos de la UI como popups */
+}
