@@ -4,81 +4,101 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alerta Canina | Inicio</title>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
-  
+  <link rel="icon" type="image/x-icon" href="../static/img/logo.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="../static/css/estilos.css">
 </head>
 <body>
 
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm">
       <div class="container">
-        
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <a class="navbar-brand d-flex align-items-center" href="{{ url_for('index') }}">
           <img src="../static/img/logo.png" alt="Logo Alerta Canina" class="logo-mini me-2">
           <span class="fw-bold">Alerta Canina</span>
         </a>
-
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="acerca.html">Acerca de</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="descripcion.html">Descripción</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="autor.html">Autor</a>
-            </li>
-            <li class="nav-item ms-lg-3">
-              <a class="btn btn-success" href="addpoint.html">Añadir Predio</a>
-            </li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('acerca') }}">Acerca de</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('descripcion') }}">Descripción</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('autor') }}">Autor</a></li>
+              <li class="nav-item ms-lg-3"><a class="btn btn-primary" href="{{ url_for('addpoint_page') }}">Añadir Predio</a></li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
 
-  <main class="container text-center main-content">
+  <main>
+    <section class="hero-section text-center">
+      <div class="container d-flex flex-column justify-content-center h-100">
+        <h1 class="display-4 fw-bold">Transforma tu Comunidad</h1>
+        <p class="lead my-4">
+          Reporta y visualiza la problemática de excrementos caninos en el Parque Alcázares. <br> Juntos podemos generar un cambio.
+        </p>
+        <div class="mt-4">
+          <a class="btn btn-primary btn-lg" href="{{ url_for('addpoint_page') }}">
+          <i class="bi bi-geo-alt-fill me-2"></i> Reportar un Punto
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="image-gallery-section py-5">
+      <div class="container">
+        <h2 class="text-center display-6 fw-bold mb-5 title-with-lines"><span>Un Vistazo al Parque</span></h2>
+        <div id="galleryCarousel" class="carousel slide shadow-lg" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active"><img src="../static/img/gallery/parque1.png" class="d-block w-100" alt="Imagen del Parque Alcázares 1"></div>
+            <div class="carousel-item"><img src="../static/img/gallery/parque2.png" class="d-block w-100" alt="Imagen del Parque Alcázares 2"></div>
+            <div class="carousel-item"><img src="../static/img/gallery/parque3.png" class="d-block w-100" alt="Imagen del Parque Alcázares 3"></div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Anterior</span></button>
+          <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Siguiente</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works-section py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-6 fw-bold title-with-lines"><span>¿Cómo Funciona?</span></h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4"><div class="feature-card text-center"><i class="bi bi-cursor-fill card-icon"></i><h3 class="card-title-custom">1. Reporta</h3><p>Usa nuestro mapa interactivo para añadir un punto exacto donde encuentres el problema. Es rápido y anónimo.</p></div></div>
+          <div class="col-md-4"><div class="feature-card text-center"><i class="bi bi-map-fill card-icon"></i><h3 class="card-title-custom">2. Visualiza</h3><p>Explora el mapa para ver los reportes de otros ciudadanos y entender la magnitud del problema en tiempo real.</p></div></div>
+          <div class="col-md-4"><div class="feature-card text-center"><i class="bi bi-bullseye card-icon"></i><h3 class="card-title-custom">3. Actúa</h3><p>Con datos claros, las autoridades y la comunidad pueden tomar acciones informadas para mantener el parque limpio.</p></div></div>
+        </div>
+      </div>
+    </section>
     
-    <div class="image-container">
-        <img src="../static/img/pq_alcazares.png" class="img-fluid" alt="Parque Los Alcázares">
-    </div>
-
-    <div class="text-center mt-4 mb-5">
-      <h1 class="display-5 fw-bold title-with-lines">
-        <span>Bienvenido a Alerta Canina</span>
-      </h1>
-      <p class="lead text-white-50">
-        El portal ciudadano para reportar y visualizar la problemática de excrementos caninos en el Parque Alcázares.
-      </p>
-    </div>
-
-    <div class="descripcion mx-auto">
-      <h2 class="mb-3">Problemática en el Parque Alcázares</h2>
-      <p>
-        El presente proyecto se ha concebido como una respuesta informada y constructiva ante 
-        la problemática persistente de la disposición inadecuada de excrementos caninos en el Parque Alcázares, un valioso espacio 
-        público situado en Bogotá, Colombia. Esta situación genera consecuencias directas sobre la calidad ambiental del parque, 
-        la salud pública de sus usuarios y el pleno disfrute de sus instalaciones, afectando particularmente a la población 
-        infantil y a los residentes que lo frecuentan.
-      </p>
-    </div>
-
+    <section class="problem-section py-5">
+        <div class="container">
+            <div class="feature-card">
+                <h2 class="text-center display-6 fw-bold mb-4">La Problemática en el Parque Alcázares</h2>
+                <p class="text-justify-custom">
+                  El presente proyecto se ha concebido como una respuesta informada y constructiva ante 
+                  la problemática persistente de la disposición inadecuada de excrementos caninos en el Parque Alcázares, un valioso espacio 
+                  público situado en Bogotá, Colombia. Esta situación genera consecuencias directas sobre la calidad ambiental del parque, 
+                  la salud pública de sus usuarios y el pleno disfrute de sus instalaciones, afectando particularly a la población 
+                  infantil y a los residentes que lo frecuentan.
+                </p>
+            </div>
+        </div>
+    </section>
   </main>
 
-  <footer class="text-center py-4 bg-dark text-light">
-    &copy; 2025 Juana Fonseca
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+  <footer class="text-center py-4 bg-dark text-light">&copy; 2025 Juana Fonseca</footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

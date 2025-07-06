@@ -1,36 +1,46 @@
+.content-card {
+    background-color: var(--card-background);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
 #map-add-point {
-    height: 400px;
+    height: 450px;
     border-radius: 10px;
     width: 100%;
     z-index: 0;
-    cursor: crosshair; 
+    cursor: crosshair;
+    border: 1px solid var(--border-color);
 }
 
 .form-label {
-    color: #ffffff;
-    font-weight: 500; 
+    color: var(--text-color);
+    font-weight: 500;
 }
 
 .form-control, .form-select {
-    background-color: rgba(0, 0, 0, 0.2);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: #fff;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
     padding: 0.75rem 1rem;
-    transition: background-color 0.3s, border-color 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .form-control:focus, .form-select:focus {
-    background-color: rgba(0, 0, 0, 0.3);
-    color: #ffffff;
-    border-color: #198754;
-    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.5);
+    background-color: #fff;
+    color: var(--text-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--primary-color) 25%, transparent);
 }
 
 .form-control::placeholder {
-    color: rgba(255, 255, 255, 0.4);
+    color: #aeaeae;
 }
 
 #coords-status {
     font-style: italic;
-    min-height: 1.5em; 
+    min-height: 1.5em;
+    color: var(--text-color-light);
 }
